@@ -248,7 +248,7 @@ func main() {
 		if err != nil {
 			log.Fatalf("accept error: %v", err.Error())
 		}
-		// which is the system socket (type is plateform specific - Int for linux)
+		// only support linux now
 		if runtime.GOOS == "linux" {
 			host, port, err := net.SplitHostPort(fd.RemoteAddr().String())
 			if err != nil {
